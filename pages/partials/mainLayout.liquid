@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <section class="sub-header">
+        <nav>
+            <a href="index"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="index">HOME</a></li>
+                    <li><a href="about">ABOUT</a></li>
+                    <li><a href="course">COURSE</a></li>
+                    <li><a href="blog">BLOG</a></li>
+                    <li><a href="contact">CONTACT</a></li>
+                    {% if session.logged %}
+                    <li><a href="profile">PROFILE</a></li>
+                    <li>
+                        <form action="/logout" method="post"><a href="#"
+                                onclick="this.closest('form').submit()">LOGOUT</a></form>
+                    </li>
+                    {% else %}
+                    <li><a href="register">REGISTER</a></li>
+                    <li><a href="login">LOGIN</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+        </nav>
+
+        <h1>{% block pageTitle %}{% endblock %}</h1>
+
+    </section>
+    {% block content %}{% endblock %}
+    <!-- Footer  -->
+
+    <section class="footer">
+        <h4>About us</h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum voluptatem, quo quam hic fugit quod ducimus
+            <br> eligendi exercitationem fuga quae itaque omnis asperiores qui recusandae quisquam rerum iste molestias
+            quibusdam.
+        </p>
+
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+        <p>Made by Showrav Mitra </p>
+    </section>
+    <!-------------(header section) javascript for toggle menu---->
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+        function showmenu() {
+            navLinks.style.right = "0";
+        }
+        function hidemenu() {
+            navLinks.style.right = "-200px";
+        }
+
+    </script>
+
+    <script type="text/javascript" src="./bot.js"></script>
+    <script>
+        const userName = `{{ session.name }}`
+        const userEmail = `{{ session.email }}`
+
+        window.BE_API = window.BE_API || {};
+        window.BE_API.onLoad = () => {
+            window.BE_API.setUserAttributes({
+                default_email: userEmail,
+                default_name: userName
+            })
+        }
+        window.BE_API.onMessage = function (res) {
+            window.BE_API.sendTrigger('custom_trigger')
+            var s = res.responses[0].value;
+            if (res.responses[0].value == "tour")
+                fetch('/tour', {
+                    method: "post"
+                })
+                console.log(s)
+        };
+        window.BE_API.on
+    </script>
+</body>
+
+</html>

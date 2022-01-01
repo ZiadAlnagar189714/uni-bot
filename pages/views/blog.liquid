@@ -1,0 +1,58 @@
+{% layout "mainLayout.liquid" %}
+{% block pageTitle %}Blog{% endblock %}
+{% block content %}
+<section class="blog-content">
+    <div class="row">
+        <div class="blog-left">
+            <img src="images/certificate.jpg" alt="certifiacte">
+            <h2>Our Certificates And Online Programs For 2021</h2>
+            <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, repudiandae. Aspernatur aut
+                dolore laudantium velit, modi natus delectus est excepturi distinctio porro. Autem unde, molestiae
+                ducimus nisi est illum incidunt.</P>
+            <br>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt et obcaecati laboriosam aut voluptates
+                fugiat sapiente, cupiditate minus sit nulla aliquam animi velit laudantium nostrum ipsa quo impedit?
+                Architecto, eius?</p>
+            <br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nulla facere tenetur quisquam quos ad
+                aut officia iure quaerat libero voluptate error fuga nemo, minus delectus adipisci, enim alias rem!
+            </p>
+
+
+            <div class="comment-box">
+                <h3>Leave a comment </h3>
+                <form class="comment-form">
+                    <input type="text" placeholder="Enter Name">
+                    <input type="text" placeholder="Enter Email">
+                    <textarea rows="5" placeholder="Your comment"></textarea>
+                    <button type="submit" class="hero-btn red-btn">Post comment</button>
+                </form>
+            </div>
+        </div>
+        <div class="blog-right">
+            <h3>Post Catagories</h3>
+            <div>
+                <span>Business Analysis</span>
+                <span>21</span>
+            </div>
+            <div>
+                <span>Data Science</span>
+                <span>30</span>
+            </div>
+            <div>
+                <span>Machine Learning</span>
+                <span>17</span>
+            </div>
+            <div>
+                <span>Computer Science</span>
+                <span>23</span>
+            </div>
+            <div>
+                <span>Mechanics</span>
+                <span>07</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

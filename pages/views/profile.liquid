@@ -1,0 +1,12 @@
+{% layout "mainLayout.liquid" %}
+{% block pageTitle %}
+Profile page
+{% endblock %}
+{% block content %}
+{% if session.logged %}
+<h1>Name: {{ session.name }}</h1>
+<h1>Email: {{ session.email }}</h1>
+{% else %}
+You are not logged in, please login.
+{% endif %}
+{% endblock %}

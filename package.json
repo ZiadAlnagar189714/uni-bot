@@ -1,0 +1,26 @@
+{
+    "name": "uni-bot",
+    "private": true,
+    "bin": "server.js",
+    "scripts": {
+        "dev": "nodemon server.js"
+    },
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "body-parser": "^1.19.1",
+        "connect-mongo": "^4.6.0",
+        "cors": "^2.8.5",
+        "csvtojson": "^2.0.10",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.2",
+        "express-session": "^1.17.2",
+        "liquidjs": "^9.31.0",
+        "moment": "^2.29.1",
+        "mongoose": "^6.1.4",
+        "node-fetch": "^2.6.6",
+        "socket.io": "^4.4.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
+}
